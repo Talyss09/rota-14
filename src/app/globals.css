@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-green: #058240;
+    --brand-green-hover: #046833;
+    --brand-dark: #0D2818;
+    --brand-text-muted: #2A4032;
+    --brand-bg-light: #F4F6F4;
+    --brand-card-hover: #EBF7EE;
+    
+    /* Superfícies & Layout */
+    --background: #FFFFFF;
+    --foreground: #0D2818;
+    --border-color: rgba(13, 40, 24, 0.1);
+  }
+
+  *,
+  ::before,
+  ::after {
+    border-color: var(--border-color);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #058240;
+    color: #ffffff;
+  }
+}
+
+@theme inline {
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-hover: var(--brand-green-hover);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-text-muted: var(--brand-text-muted);
+  --color-brand-bg-light: var(--brand-bg-light);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border-color);
+}
+
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar,
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@utility animate-floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@utility animate-marquee-left {
+  animation: marquee-left 35s linear infinite;
+}
+
+@utility animate-marquee-right {
+  animation: marquee-right 35s linear infinite;
+}
