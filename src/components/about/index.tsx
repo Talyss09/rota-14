@@ -56,6 +56,7 @@ export function AboutSection() {
               <Image
                 src="/images/panel-6.jpg"
                 alt="Comunidade Rota 14"
+                sizes="(max-width: 1024px) 55vw, 28vw"
                 fill
                 className="object-cover"
               />
@@ -66,6 +67,7 @@ export function AboutSection() {
                 src="/images/panel-8.jpg"
                 alt="Mentoria Rota 14"
                 fill
+                sizes="(max-width: 1024px) 60vw, 30vw"
                 className="object-cover"
               />
             </div>
@@ -92,6 +94,8 @@ export function AboutSection() {
 
         </div>
 
+  <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20">
           <div className="relative flex flex-col items-center">
 
@@ -105,7 +109,7 @@ export function AboutSection() {
                 {leftFacts.map((fact, idx) => (
                   <p
                     key={idx}
-                    className="text-xs font-semibold uppercase tracking-wide text-[#2A4032]/80 max-w-50"
+                    className="text-xs font-semibold uppercase tracking-wide text-[#2A4032]/80 max-w-50 transition-all duration-300 ease-in-out cursor-default hover:text-[#058240] hover:scale-110 active:scale-110 active:text-[#058240]"
                   >
                     {fact.text}
                   </p>
@@ -150,13 +154,17 @@ export function AboutSection() {
                   })}
                 </svg>
 
-                <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg ring-1 ring-[#058240]/20 z-10">
-                  <Image
-                    src="/images/panel-1.jpg"
-                    alt="Rafaella, fundadora da Rota 14"
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative group transition-all duration-500 ease-in-out cursor-pointer hover:scale-125 active:scale-125">
+                  <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg ring-1 ring-[#058240]/20 z-10 transition-shadow duration-500 group-hover:shadow-2xl group-active:shadow-2xl">
+                    <Image
+                      src="/images/panel-1.jpg"
+                      alt="Rafaella, fundadora da Rota 14"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  {/* Subtle pulsing glow on hover/active */}
+                  <div className="absolute inset-0 rounded-full bg-[#058240]/10 opacity-0 group-hover:opacity-100 group-active:opacity-100 group-hover:animate-pulse transition-opacity duration-500"></div>
                 </div>
               </div>
 
@@ -164,7 +172,7 @@ export function AboutSection() {
                 {rightFacts.map((fact, idx) => (
                   <p
                     key={idx}
-                    className="text-xs font-semibold uppercase tracking-wide text-[#2A4032]/80 max-w-50"
+                    className="text-xs font-semibold uppercase tracking-wide text-[#2A4032]/80 max-w-50 transition-all duration-300 ease-in-out cursor-default hover:text-[#058240] hover:scale-110 active:scale-110 active:text-[#058240]"
                   >
                     {fact.text}
                   </p>
@@ -173,21 +181,25 @@ export function AboutSection() {
             </div>
 
             <div className="flex flex-col items-center gap-8 lg:hidden w-full">
-              <div className="relative w-36 h-36 sm:w-40 sm:h-40 shrink-0 rounded-full overflow-hidden border-4 border-white shadow-lg ring-1 ring-[#058240]/20">
-                <Image
-                  src="/images/panel-1.jpg"
-                  alt="Rafaella, fundadora da Rota 14"
-                  fill
-                  sizes="160px"
-                  className="object-cover"
-                />
+
+              <div className="relative group transition-all duration-500 ease-in-out cursor-pointer hover:scale-115 active:scale-115">
+                <div className="relative w-36 h-36 sm:w-40 sm:h-40 shrink-0 rounded-full overflow-hidden border-4 border-white shadow-lg ring-1 ring-[#058240]/20 transition-shadow duration-500 group-hover:shadow-xl group-active:shadow-xl">
+                  <Image
+                    src="/images/panel-1.jpg"
+                    alt="Rafaella, fundadora da Rota 14"
+                    fill
+                    sizes="(max-width: 640px) 144px, 160px"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="absolute inset-0 rounded-full bg-[#058240]/5 opacity-0 group-hover:opacity-100 group-active:opacity-100 group-hover:animate-pulse transition-opacity duration-500"></div>
               </div>
 
               <div className="grid grid-cols-2 gap-x-6 gap-y-5 w-full max-w-md px-4">
                 {[...leftFacts, ...rightFacts].map((fact, idx) => (
                   <p
                     key={idx}
-                    className="text-xs font-semibold uppercase tracking-wide text-[#2A4032]/80 text-center"
+                    className="text-xs font-semibold uppercase tracking-wide text-[#2A4032]/80 text-center transition-all duration-300 ease-in-out hover:text-[#058240] hover:scale-105 active:scale-105 active:text-[#058240]"
                   >
                     {fact.text}
                   </p>
@@ -197,6 +209,8 @@ export function AboutSection() {
 
           </div>
         </div>
+      </div>
+    </section>
 
         <div className="pt-12 border-t border-gray-100">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

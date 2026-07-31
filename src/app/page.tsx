@@ -10,13 +10,6 @@ import { ServicesSection } from '@/components/services'
 import { Footer } from '@/components/footer'
 import { Hero } from '@/components/Hero'
 
-const heroBackgroundImages = [
-  { src: '/images/panel-1.jpg', alt: 'Criança sorrindo' },
-  { src: '/images/panel-6.jpg', alt: 'Estudantes reunidos' },
-  { src: '/images/panel-3.jpg', alt: 'Voluntários em ação' },
-  { src: '/images/panel-4.jpg', alt: 'Comunidade local' },
-  { src: '/images/panel-7.jpg', alt: 'Apoio educacional' },
-];
 
 export default function Home() {
   return (

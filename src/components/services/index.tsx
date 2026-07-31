@@ -65,8 +65,8 @@ function ServiceCard({ service }: { service: Service }) {
   const Icon = service.icon;
 
   return (
-    <div className="group relative h-[280px] overflow-hidden border-b border-r border-emerald-900/10 bg-[#F4F6F4] px-8 py-10 transition-colors duration-300 hover:bg-[#EBF7EE] cursor-pointer">
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 transition-all duration-500 ease-out group-hover:-translate-y-6 group-hover:opacity-0">
+    <div className="group relative h-[280px] overflow-hidden border-b border-r border-emerald-900/10 bg-[#F4F6F4] px-8 py-10 transition-colors duration-300 hover:bg-[#EBF7EE] active:bg-[#EBF7EE] cursor-pointer select-none touch-manipulation" tabIndex={0}>
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 transition-all duration-500 ease-out group-hover:-translate-y-6 group-hover:opacity-0 group-active:-translate-y-6 group-active:opacity-0">
         <Icon
           className="mb-6 h-12 w-12 text-[#058240]"
           strokeWidth={1.5}
@@ -76,15 +76,15 @@ function ServiceCard({ service }: { service: Service }) {
         </span>
       </div>
 
-      <div className="absolute inset-0 flex translate-y-6 flex-col items-center justify-center px-8 text-center opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+      <div className="absolute inset-0 flex translate-y-6 flex-col items-center justify-center px-8 text-center opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-active:translate-y-0 group-active:opacity-100">
         <span className="mb-3 text-sm font-bold uppercase tracking-wide text-[#0D2818]">
           {service.title}
         </span>
-        <span className="mb-4 block h-[2px] w-8 bg-[#058240]" />
+        <span className="mb-4 block h-0.5 w-8 bg-[#058240]" />
         <p className="mb-6 text-sm leading-relaxed text-[#2A4032]/80">
           {service.description}
         </p>
-        <span className="border-t border-[#058240]/20 pt-3 text-xs font-bold uppercase tracking-widest text-[#058240] transition-colors group-hover:text-[#046833]">
+        <span className="border-t border-[#058240]/20 pt-3 text-xs font-bold uppercase tracking-widest text-[#058240] transition-colors group-hover:text-[#046833] group-active:text-[#046833]">
           Saber mais
         </span>
       </div>
